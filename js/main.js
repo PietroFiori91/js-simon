@@ -15,7 +15,7 @@ function bigCd() {
   const minutes = Math.floor((sottrazione % (1000 * 60 * 60)) / (1000 * 60)); //perchè il sedcondo diviso ?
   const seconds = Math.floor((sottrazione % (1000 * 60)) / 1000); //perchè il sedcondo diviso ?
 
-  // Visualizza il countdown
+  // CONSOLE LOG CD
   console.log(
     hours + " ore " + minutes + " minuti " + seconds + " secondi rimanenti"
   );
@@ -28,6 +28,9 @@ function bigCd() {
   if (sottrazione <= 0) {
     console.log("Countdown terminato!");
     reset(countdownInterval);
+    //STOP CD
+    clearInterval(countdownInterval);
+    countdownElement.innerHTML = "Countdown terminato!";
   }
 }
 
